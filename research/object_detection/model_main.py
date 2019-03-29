@@ -104,6 +104,9 @@ def main(unused_argv):
         throttle_secs=train_and_eval_dict['eval_interval_secs'])
 
     # Currently only a single Eval Spec is allowed.
+    tf.logging.info("Config: {}".format(train_and_eval_dict))
+    tf.logging.info("Train spec: {}".format(train_spec))
+    tf.logging.info("Eval spec: {}".format(eval_specs))
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_specs[0])
 
 
